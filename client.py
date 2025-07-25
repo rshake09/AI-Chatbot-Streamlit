@@ -1,8 +1,9 @@
 import os
-import requests
 from dotenv import load_dotenv
 import json
 import sseclient
+import requests
+
 
 load_dotenv()
 
@@ -16,7 +17,7 @@ class BotpressClient:
     def __init__(self):
         self.headers = {
             "accept": "application/json",
-            "Content-type": "application/json",
+            "Content-Type": "application/json",
             "x-user-key": os.getenv("USER_KEY"),
         }
         self.base_url = BASE_URI
@@ -32,6 +33,9 @@ class BotpressClient:
         except requests.HTTPError:
             return response.status_code, response.text
 
+    def get_user(self):
+        return self._request("GET", "/users/me")
+
     def create_user(self, name, id):
         user_data = {"name": name, "id": id}
         return self._request("POST", "/users", json = user_data)
@@ -45,25 +49,35 @@ class BotpressClient:
                 "type": "text",
                 "text": message
             },
-            "conversationID": conversation_id,
+            "conversationId": conversation_id,
         }
         return self._request("POST", "/messages", json = body)
     
-    def list_messages(self, conversation_id):
-        return self._request("GET", "/messages")
 
-    def listen_to_stream(self, conversation_id):
+    def listen_conversation(self, conversation_id):
         url = f"{self.base_url}/conversations/{conversation_id}/listen"
         
         for event in sseclient.SSEClient(url, headers = self.headers):
             print(event.data)
+            if event.data == "ping":
+                continue
+            data = json.loads(event.data)["data"]
+            yield {
+                "id": data["id"],
+                "text": data["payload"]["text"]
+            }
+
+    def list_messages(self, conversation_id):
+        return self._request("GET", f"/conversations/{conversation_id}/messages")
 
 
 
 
 if __name__ == "__main__":
+
     client = BotpressClient()
-    
-    #print(client.create_user("Rizma", "1234"))
-    #print(client.create_convo())
-    client.listen_to_stream(CONVERSATION_ID)
+    response = client.create_message(CONVERSATION_ID, "Hi from Rizma's script!")
+    print("Message sent:", response)
+
+    print("Listening for bot reply...")
+    client.listen_conversation(CONVERSATION_ID)

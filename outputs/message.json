@@ -1,0 +1,14 @@
+{
+    "type": "message_created",
+    "data": {
+        "id": "ecfec515-5731-4bc0-9612-599caa4ade7a",
+        "conversationId": "conv_01K0FVZZ2MAM8AR50919S4HZ7K",
+        "userId": "user_01K0FS225FFF9NFC7642WJYDRC",
+        "createdAt": "2025-07-24T18:51:17.890Z",
+        "payload": {
+            "type": "text",
+            "text": "Hello! 👋 Welcome from Rizma's script. How can I assist you today?"
+        },
+        "isBot": true
+    }
+}

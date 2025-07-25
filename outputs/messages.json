@@ -1,0 +1,42 @@
+[
+  {
+    "role": "user",
+    "content": "Hi from Rizma's script!"
+  },
+  {
+    "role": "assistant",
+    "content": "Hello! \ud83d\udc4b Welcome from Rizma's script. How can I assist you today?"
+  },
+  {
+    "role": "user",
+    "content": "hi"
+  },
+  {
+    "role": "assistant",
+    "content": "Hello! How can I help you today?"
+  },
+  {
+    "role": "user",
+    "content": "hello"
+  },
+  {
+    "role": "assistant",
+    "content": "Hello! How can I assist you today?"
+  },
+  {
+    "role": "user",
+    "content": "tell me about heart attacks"
+  },
+  {
+    "role": "assistant",
+    "content": "A heart attack, also known as myocardial infarction, is a medical emergency where the blood flow to part of the heart is blocked, often by a blood clot. This can cause damage to the heart muscle. In clinical settings, heart attacks are often identified and monitored using vital signs such as heart rate, blood pressure, and heart rhythm. Electrocardiograms (ECGs) are also commonly used to diagnose and assess heart attacks, as they provide detailed information about the heart's electrical activity and can help link symptoms to cardiac events. If you have more specific questions about symptoms, diagnosis, or treatment, feel free to ask!"
+  },
+  {
+    "role": "user",
+    "content": "tell me about symptoms"
+  },
+  {
+    "role": "assistant",
+    "content": "Symptoms of a heart attack can include chest pain (often self-reported on a scale from 0-10), abnormal heart rhythm, changes in heart rate, and other vital sign abnormalities such as blood pressure and respiratory rate. If you or someone else is experiencing these symptoms, it is important to seek emergency medical attention immediately."
+  }
+]
