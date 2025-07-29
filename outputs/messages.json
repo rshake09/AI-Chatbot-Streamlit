@@ -38,5 +38,21 @@
   {
     "role": "assistant",
     "content": "Symptoms of a heart attack can include chest pain (often self-reported on a scale from 0-10), abnormal heart rhythm, changes in heart rate, and other vital sign abnormalities such as blood pressure and respiratory rate. If you or someone else is experiencing these symptoms, it is important to seek emergency medical attention immediately."
+  },
+  {
+    "role": "user",
+    "content": "what else is an interesting fact about medical stuff"
+  },
+  {
+    "role": "assistant",
+    "content": "Here's an interesting fact: The MIMIC database is a large, freely available collection of deidentified health-related data from over forty thousand patients who stayed in critical care units. It supports a wide range of research in epidemiology, clinical decision-making, and electronic tool development, and is notable for its high temporal resolution data, including lab results and bedside monitor trends."
+  },
+  {
+    "role": "user",
+    "content": "tell me about some monitor trends"
+  },
+  {
+    "role": "assistant",
+    "content": "Monitor trends in medical settings refer to the continuous recording of vital signs and other physiological data from patients, especially in intensive care units (ICUs). The MIMIC database, a large resource for critical care research, includes high-resolution data such as lab results and bedside monitor trends and waveforms. These trends can include heart rate, blood pressure, respiratory rate, and more, recorded frequently (often hourly or even more often) to track changes in a patient's condition over time. Such data is invaluable for both clinical care and research into patient outcomes and treatment effectiveness."
   }
 ]
